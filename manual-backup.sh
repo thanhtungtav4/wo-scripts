@@ -16,5 +16,10 @@ sleep 1;
 
 sleep 1;
 
-echo "🔄 Backing up files to Google Drive..."
+echo "🔄 Backing up files to Google Drive...";
+
 gdrive push -quiet -destination Backups /opt/backups/*;
+
+sleep 1;
+
+echo "Super Rad backups complete 🤘"
