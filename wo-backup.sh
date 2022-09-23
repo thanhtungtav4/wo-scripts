@@ -4,8 +4,8 @@
 
 SITE=$1
 DATE_FORM=$(date -d "today" +"%Y%m%d%H%M")
-BACKUP_DIR="/var/www/$SITE/backup/"
-BACKUP_PATH="/var/www/$SITE/backup/$DATE_FORM"
+BACKUP_DIR="/opt/backups/$SITE/"
+BACKUP_PATH="/opt/backups/$SITE/$DATE_FORM"
 SITE_ROOT="/var/www/$SITE/htdocs"
 DAYSKEEP=7
 
@@ -28,7 +28,7 @@ find "$BACKUP_DIR" -type d -mtime +$DAYSKEEP -exec rm -rf {} \;
 cd "$SITE_ROOT" || exit
 
 echo "🔄 Backing up files to $BACKUP_PATH..."
-tar -czf "$BACKUP_PATH/$SITE.tar.gz" --exclude-from="/scripts/wo-backup/exclusions.txt" -C "$SITE_ROOT" .
+tar -zcvf "$BACKUP_PATH/$SITE.tar.gz" --exclude-from="/scripts/wo-backup/exclusions.txt" -C "$SITE_ROOT" .
 
 # Backup WordPress config file
 cp "/var/www/$SITE/wp-config.php" "$BACKUP_PATH"
