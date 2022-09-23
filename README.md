@@ -23,7 +23,7 @@ git clone https://code.superrad.dev/superrad/wo-scripts.git
 ### Example Backup
 
 ```bash
-/scripts/wo-backup/wo-backup.sh yourdomain.com
+/scripts/wo-scripts/wo-backup.sh yourdomain.com
 ```
 
 ### Example Import
@@ -33,7 +33,7 @@ git clone https://code.superrad.dev/superrad/wo-scripts.git
 3. Next, run the following.
 
 	```bash
-	/scripts/wo-backup/wo-import.sh yourdomain.com 202208221423
+	/scripts/wo-scripts/wo-import.sh yourdomain.com 202208221423
 	```
 
 ### Example Migrate
@@ -42,7 +42,7 @@ git clone https://code.superrad.dev/superrad/wo-scripts.git
 2. Create your destination site or use one that's already created. For this example we'll call the destination site "Prod".
 3. Next we're going to be migrating Staging to Prod.
 	```bash
- 	/scripts/wo-backup/wo-migrate.sh staging.com prod.com 202208221423
+ 	/scripts/wo-scripts/wo-migrate.sh staging.com prod.com 202208221423
 	```
 
 ### To do
