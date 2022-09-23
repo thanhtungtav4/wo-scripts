@@ -16,4 +16,5 @@ sleep 1;
 
 sleep 1;
 
+echo "🔄 Backing up files to Google Drive..."
 gdrive push -quiet -destination Backups /opt/backups/*;
