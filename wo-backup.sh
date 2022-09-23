@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Example usage: /scripts/wo-backup.sh thedomain.com
+# Example usage: /scripts/wo-scripts/wo-backup.sh thedomain.com
 
 SITE=$1
 DATE_FORM=$(date -d "today" +"%Y%m%d%H%M")
@@ -28,7 +28,7 @@ find "$BACKUP_DIR" -type d -mtime +$DAYSKEEP -exec rm -rf {} \;
 cd "$SITE_ROOT" || exit
 
 echo "🔄 Backing up files to $BACKUP_PATH..."
-tar -zcvf "$BACKUP_PATH/$SITE.tar.gz" --exclude-from="/scripts/wo-backup/exclusions.txt" -C "$SITE_ROOT" .
+tar -zcvf "$BACKUP_PATH/$SITE.tar.gz" --exclude-from="/scripts/wo-scripts/exclusions.txt" -C "$SITE_ROOT" .
 
 # Backup WordPress config file
 cp "/var/www/$SITE/wp-config.php" "$BACKUP_PATH"
