@@ -16,6 +16,8 @@ cd "/var/www/${DOM}/htdocs" || exit 1
 ### Install plugins from official repository
 wp plugin install autodescription two-factor wp-force-login wordpress-importer --activate --allow-root
 
+sleep 1
+
 # Install Beaver Builder Theme if not installed
 #echo "Installing Beaver Builder Theme..."
 #wp theme install https://files.sixteenbit.com/wordpress/themes/bb-theme.zip --allow-root
@@ -32,14 +34,22 @@ wp plugin install autodescription two-factor wp-force-login wordpress-importer -
 echo "Installing Advanced Custom Fields Pro..."
 wp plugin install https://files.sixteenbit.com/wordpress/plugins/advanced-custom-fields-pro.zip --activate --allow-root
 
+sleep 1
+
 # Install Gravity Forms if not installed
 echo "Installing Gravity Forms..."
 wp plugin install https://files.sixteenbit.com/wordpress/plugins/gravityforms.zip --activate --allow-root
 
+sleep 1
+
 # Set Timezone to New York
 wp option update timezone_string "America/New_York"
 
+sleep 1
+
 # Update permalink structure
 wp option update permalink_structure "/%postname%/"
+
+echo "Super Rad post install complete 🤘"
 
 exit 0

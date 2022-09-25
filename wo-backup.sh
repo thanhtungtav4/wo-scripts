@@ -30,8 +30,12 @@ cd "$SITE_ROOT" || exit
 echo "🔄 Backing up files to $BACKUP_PATH..."
 tar -zcvf "$BACKUP_PATH/$SITE.tar.gz" --exclude-from="/scripts/wo-scripts/exclusions.txt" -C "$SITE_ROOT" .
 
+sleep 1
+
 # Backup WordPress config file
 cp "/var/www/$SITE/wp-config.php" "$BACKUP_PATH"
+
+sleep 1
 
 echo "🔄 Backing up WordPress database..."
 
@@ -45,5 +49,7 @@ wp db export "$BACKUP_PATH/$SITE".sql \
 	--quiet
 
 echo "✅ $SITE backup complete."
+
+echo "Super Rad backup complete 🤘"
 
 exit 0

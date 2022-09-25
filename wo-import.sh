@@ -6,7 +6,7 @@ SITE=$1
 SITE_ROOT="/var/www/$SITE/htdocs"
 
 BACKUP_DATE=$2
-BACKUP="/var/www/$SITE/backup/$BACKUP_DATE/$SITE"
+BACKUP="/var/www/$SITE/import/$BACKUP_DATE"
 
 # If no source domain, bail.
 if test -z "$SITE"; then
@@ -31,15 +31,25 @@ cd "$SITE_ROOT" || exit
 echo "␡ Delete the wp-content $SITE..."
 rm -rf wp-content/plugins/ wp-content/themes/ wp-content/uploads/
 
+sleep 1
+
 echo "⬇️ Import files from $SITE..."
 tar -xf "$BACKUP".tar.gz
+
+sleep 1
 
 echo "♻️ Resetting the database for $SITE..."
 wp db reset --yes --allow-root
 
+sleep 1
+
 echo "⬇️ Importing the database from $SITE..."
 wp db import "$BACKUP".sql --allow-root
 
-wp cache flush --allow-root;
+sleep 1
+
+wp cache flush --allow-root
+
+echo "Super Rad import complete 🤘"
 
 exit 0
