@@ -70,6 +70,6 @@ sleep 1
 
 wp cache flush --allow-root
 
-echo "Super Rad migration complete 🤘"
+echo "$SOURCE_SITE to $DEST_SITE migration complete 🤘"
 
 exit 0

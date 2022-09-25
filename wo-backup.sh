@@ -48,8 +48,6 @@ wp db export "$BACKUP_PATH/$SITE".sql \
 	--skip-plugins \
 	--quiet
 
-echo "✅ $SITE backup complete."
-
-echo "Super Rad backup complete 🤘"
+echo "✅ $SITE backup complete 🤘"
 
 exit 0

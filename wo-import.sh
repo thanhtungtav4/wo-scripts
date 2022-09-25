@@ -50,6 +50,6 @@ sleep 1
 
 wp cache flush --allow-root
 
-echo "Super Rad import complete 🤘"
+echo "$SITE import complete 🤘"
 
 exit 0
