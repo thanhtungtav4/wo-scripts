@@ -20,11 +20,11 @@ sleep 1
 
 # Install Beaver Builder Theme if not installed
 #echo "Installing Beaver Builder Theme..."
-#wp theme install https://files.sixteenbit.com/wordpress/themes/bb-theme.zip --allow-root
+#wp theme install https://files.superrad.dev/wordpress/themes/bb-theme.zip --allow-root
 
 # Install Beaver Builder Plugin if not installed
 #echo "Installing Beaver Builder Plugin..."
-#wp plugin install https://files.sixteenbit.com/wordpress/plugins/bb-plugin.zip --allow-root
+#wp plugin install https://files.superrad.dev/wordpress/plugins/bb-plugin.zip --allow-root
 
 # Activate Beaver Builder Plugin if not activated
 #wp plugin activate bb-plugin --allow-root
@@ -32,13 +32,13 @@ sleep 1
 
 # Install Advanced Custom Fields Pro if not installed
 echo "Installing Advanced Custom Fields Pro..."
-wp plugin install https://files.sixteenbit.com/wordpress/plugins/advanced-custom-fields-pro.zip --activate --allow-root
+wp plugin install https://files.superrad.dev/wordpress/plugins/advanced-custom-fields-pro.zip --activate --allow-root
 
 sleep 1
 
 # Install Gravity Forms if not installed
 echo "Installing Gravity Forms..."
-wp plugin install https://files.sixteenbit.com/wordpress/plugins/gravityforms.zip --activate --allow-root
+wp plugin install https://files.superrad.dev/wordpress/plugins/gravityforms.zip --activate --allow-root
 
 sleep 1
 
