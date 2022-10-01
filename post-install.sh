@@ -14,7 +14,7 @@ fi
 cd "/var/www/${DOM}/htdocs" || exit 1
 
 ### Install plugins from official repository
-wp plugin install autodescription two-factor wp-force-login wordpress-importer --activate --allow-root
+wp plugin install autodescription cloudflare limit-login-attempts-reloaded mailgun two-factor wp-force-login wordpress-importer --activate --allow-root
 
 sleep 1
 
@@ -42,13 +42,17 @@ wp plugin install https://files.superrad.dev/wordpress/plugins/gravityforms.zip 
 
 sleep 1
 
+# Install Gravity Forms if not installed
+echo "Installing WordPress Environments..."
+wp plugin install https://files.superrad.dev/wordpress/plugins/wp-environments.zip --activate --allow-root
+
 # Set Timezone to New York
-wp option update timezone_string "America/New_York"
+wp option update timezone_string "America/New_York" --allow-root
 
 sleep 1
 
 # Update permalink structure
-wp option update permalink_structure "/%postname%/"
+wp option update permalink_structure "/%postname%/" --allow-root
 
 echo "Super Rad post install complete 🤘"
 
