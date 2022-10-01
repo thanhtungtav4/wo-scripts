@@ -42,9 +42,17 @@ wp plugin install https://files.superrad.dev/wordpress/plugins/gravityforms.zip 
 
 sleep 1
 
-# Install Gravity Forms if not installed
+# Install WordPress Environments if not installed
 echo "Installing WordPress Environments..."
 wp plugin install https://files.superrad.dev/wordpress/plugins/wp-environments.zip --activate --allow-root
+
+sleep 1
+
+# Install Super Rad Login if not installed
+echo "Installing Super Rad Login..."
+wp plugin install https://files.superrad.dev/wordpress/plugins/superrad-login.zip --activate --allow-root
+
+sleep 1
 
 # Set Timezone to New York
 wp option update timezone_string "America/New_York" --allow-root
@@ -53,6 +61,11 @@ sleep 1
 
 # Update permalink structure
 wp option update permalink_structure "/%postname%/" --allow-root
+
+sleep 1
+
+# Set permissions
+sudo chown -R www-data:www-data ./ && sudo find . -type f -exec chmod 644 {} + && sudo find . -type d -exec chmod 755 {} +
 
 echo "Super Rad post install complete 🤘"
 
