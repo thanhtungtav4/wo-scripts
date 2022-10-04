@@ -20,7 +20,7 @@ if test -z "$SITE"; then
 	fi
 
 	# If no backup, bail
-	if [ ! -e "$SITE".sql ]; then
+	if [ ! -e "$BACKUP/$SITE".sql ]; then
 		echo "❗️$SITE.sql does not appear to be located in $BACKUP!"
 		exit 1
 	fi
@@ -34,7 +34,7 @@ rm -rf wp-content/plugins/ wp-content/themes/ wp-content/uploads/
 sleep 1
 
 echo "⬇️ Import files from $SITE..."
-tar -xf "$SITE".tar.gz
+tar -xf "$BACKUP/$SITE".tar.gz
 
 sleep 1
 
@@ -44,7 +44,7 @@ wp db reset --yes --allow-root
 sleep 1
 
 echo "⬇️ Importing the database from $SITE..."
-wp db import "$SITE".sql --allow-root
+wp db import "$BACKUP/$SITE".sql --allow-root
 
 sleep 1
 
