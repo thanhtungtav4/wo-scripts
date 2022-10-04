@@ -14,7 +14,7 @@ fi
 cd "/var/www/${DOM}/htdocs" || exit 1
 
 ### Install plugins from official repository
-wp plugin install autodescription cloudflare limit-login-attempts-reloaded mailgun two-factor wp-force-login wordpress-importer --activate --allow-root
+wp plugin install autodescription cloudflare limit-login-attempts-reloaded mailgun safe-svg two-factor wp-force-login wordpress-importer --activate --allow-root
 
 sleep 1
 
