@@ -4,7 +4,7 @@ Collection of scripts to use with WordOps.
 
 ## What's going on here?
 
-- Checks if there’s a WordPress site installed
+- Checks if there's a WordPress site installed
 - Creates a backup path in /var/www/yourdomain.com/backup/
 - Backs up files excluding files listed in exclusions.txt
 - Backs up wp-config.php

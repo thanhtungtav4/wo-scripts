@@ -5,8 +5,6 @@ wp-content/upgrade
 wp-content/cache
 wp-content/*.zip
 wp-content/*.gz
-wp-content/plugins/index.php
-wp-content/themes/index.php
 index.php
 license.txt
 readme.html

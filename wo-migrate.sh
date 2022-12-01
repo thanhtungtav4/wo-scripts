@@ -1,13 +1,14 @@
 #! /bin/bash
 
-# Example usage: /scripts/wo-migrate.sh prod.com dev.com 202208191441
+# Example usage: /scripts/wo-migrate.sh prod.com dev.com
 
 SOURCE_SITE=$1
-#SOURCE_SITE_ROOT="/var/www/$SOURCE_SITE/htdocs"
+SOURCE_SITE_ROOT="/var/www/$SOURCE_SITE/htdocs"
 
 DEST_SITE=$2
 DEST_SITE_ROOT="/var/www/$DEST_SITE/htdocs"
 
+# Add option to migrate specific backup. If not specified, use latest backup.
 BACKUP_DATE=$3
 BACKUP="/opt/backups/$SOURCE_SITE/$BACKUP_DATE"
 
@@ -48,8 +49,8 @@ rm -rf wp-content/plugins/ wp-content/themes/ wp-content/uploads/
 
 sleep 1
 
-echo "⬇️ Import files from $SOURCE_SITE..."
-tar -xf "$BACKUP".tar.gz
+echo "👉 rsync $SOURCE_SITE_ROOT/wp-content/ to $DEST_SITE_ROOT/wp-content..."
+rsync -avz --delete "$SOURCE_SITE_ROOT"/wp-content/ "$DEST_SITE_ROOT"/wp-content/
 
 sleep 1
 
