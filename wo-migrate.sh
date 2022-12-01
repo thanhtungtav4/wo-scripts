@@ -42,6 +42,19 @@ if test -z "$DEST_SITE"; then
 	fi
 fi
 
+cd "$SOURCE_SITE_ROOT" || exit
+
+echo "🔄 Backing up WordPress database..."
+wp db export "$DEST_SITE_ROOT/$DEST_SITE".sql \
+	--single-transaction \
+	--quick \
+	--lock-tables=false \
+	--allow-root \
+	--skip-themes \
+	--skip-plugins \
+	--quiet
+
+
 cd "$DEST_SITE_ROOT" || exit
 
 echo "␡ Delete the wp-content $DEST_SITE..."
@@ -60,7 +73,7 @@ wp db reset --yes --allow-root
 sleep 1
 
 echo "⬇️ Importing the database from $SOURCE_SITE..."
-wp db import "$BACKUP".sql --allow-root
+wp db import "$DEST_SITE".sql --allow-root
 
 sleep 1
 
