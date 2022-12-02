@@ -54,11 +54,9 @@ wp db export "$DEST_SITE_ROOT/$DEST_SITE".sql \
 	--skip-plugins \
 	--quiet
 
+sleep 1
 
 cd "$DEST_SITE_ROOT" || exit
-
-echo "␡ Delete the wp-content $DEST_SITE..."
-rm -rf wp-content/plugins/ wp-content/themes/ wp-content/uploads/
 
 sleep 1
 
