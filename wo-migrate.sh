@@ -82,6 +82,6 @@ sleep 1
 
 wp cache flush --allow-root
 
-echo "$SOURCE_SITE to $DEST_SITE migration completed in $SECONDS 🤘"
+echo "$SOURCE_SITE to $DEST_SITE migration completed in $SECONDS seconds 🤘"
 
 exit 0
