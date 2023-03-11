@@ -14,21 +14,9 @@ fi
 cd "/var/www/${DOM}/htdocs" || exit 1
 
 ### Install plugins from official repository
-wp plugin install autodescription cloudflare limit-login-attempts-reloaded mailgun safe-svg two-factor wp-force-login wordpress-importer --activate --allow-root
+wp plugin install autodescription cloudflare google-site-kit limit-login-attempts-reloaded mailgun two-factor wordpress-importer --activate --allow-root
 
 sleep 1
-
-# Install Beaver Builder Theme if not installed
-#echo "Installing Beaver Builder Theme..."
-#wp theme install https://files.superrad.dev/wordpress/themes/bb-theme.zip --allow-root
-
-# Install Beaver Builder Plugin if not installed
-#echo "Installing Beaver Builder Plugin..."
-#wp plugin install https://files.superrad.dev/wordpress/plugins/bb-plugin.zip --allow-root
-
-# Activate Beaver Builder Plugin if not activated
-#wp plugin activate bb-plugin --allow-root
-#wp beaver register --license=7a62702e726976794078656e67662e666e706879 --allow-root
 
 # Install Advanced Custom Fields Pro if not installed
 echo "Installing Advanced Custom Fields Pro..."
